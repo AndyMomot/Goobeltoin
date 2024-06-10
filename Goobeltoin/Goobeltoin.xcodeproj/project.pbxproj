@@ -13,6 +13,16 @@
 		474EC7F62C175FE60090FAC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 474EC7F52C175FE60090FAC4 /* Assets.xcassets */; };
 		474EC7F92C175FE60090FAC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474EC7F72C175FE60090FAC4 /* LaunchScreen.storyboard */; };
 		474EC8022C1760370090FAC4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC8012C1760370090FAC4 /* ContentView.swift */; };
+		474EC8042C1763D40090FAC4 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 474EC8032C1763D40090FAC4 /* swiftgen.yml */; };
+		474EC81D2C1763E80090FAC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 474EC8072C1763E80090FAC4 /* Images.xcassets */; };
+		474EC81E2C1763E80090FAC4 /* Images.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC8082C1763E80090FAC4 /* Images.generated.swift */; };
+		474EC81F2C1763E80090FAC4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 474EC80A2C1763E80090FAC4 /* Colors.xcassets */; };
+		474EC8202C1763E80090FAC4 /* Colors.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC80B2C1763E80090FAC4 /* Colors.generated.swift */; };
+		474EC8252C1763E80090FAC4 /* Fonts.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC8112C1763E80090FAC4 /* Fonts.generated.swift */; };
+		474EC82E2C1763E80090FAC4 /* Strings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC81B2C1763E80090FAC4 /* Strings.generated.swift */; };
+		474EC82F2C1763E80090FAC4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 474EC81C2C1763E80090FAC4 /* Localizable.strings */; };
+		474EC83D2C176B470090FAC4 /* PreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC83C2C176B460090FAC4 /* PreloaderView.swift */; };
+		474EC83F2C176B4E0090FAC4 /* PreloaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC83E2C176B4E0090FAC4 /* PreloaderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,25 @@
 		474EC7F82C175FE60090FAC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		474EC7FA2C175FE60090FAC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		474EC8012C1760370090FAC4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		474EC8032C1763D40090FAC4 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		474EC8072C1763E80090FAC4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		474EC8082C1763E80090FAC4 /* Images.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.generated.swift; sourceTree = "<group>"; };
+		474EC80A2C1763E80090FAC4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		474EC80B2C1763E80090FAC4 /* Colors.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.generated.swift; sourceTree = "<group>"; };
+		474EC8112C1763E80090FAC4 /* Fonts.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.generated.swift; sourceTree = "<group>"; };
+		474EC81B2C1763E80090FAC4 /* Strings.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.generated.swift; sourceTree = "<group>"; };
+		474EC81C2C1763E80090FAC4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		474EC8302C1764720090FAC4 /* SFPRODISPLAYULTRALIGHTITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYULTRALIGHTITALIC.OTF; sourceTree = "<group>"; };
+		474EC8312C1764720090FAC4 /* SFPRODISPLAYHEAVYITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYHEAVYITALIC.OTF; sourceTree = "<group>"; };
+		474EC8322C1764720090FAC4 /* SFPRODISPLAYBLACKITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYBLACKITALIC.OTF; sourceTree = "<group>"; };
+		474EC8332C1764730090FAC4 /* SFPRODISPLAYMEDIUM.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYMEDIUM.OTF; sourceTree = "<group>"; };
+		474EC8342C1764730090FAC4 /* SFPRODISPLAYTHINITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYTHINITALIC.OTF; sourceTree = "<group>"; };
+		474EC8352C1764730090FAC4 /* SFPRODISPLAYBOLD.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYBOLD.OTF; sourceTree = "<group>"; };
+		474EC8362C1764730090FAC4 /* SFPRODISPLAYREGULAR.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYREGULAR.OTF; sourceTree = "<group>"; };
+		474EC8372C1764730090FAC4 /* SFPRODISPLAYLIGHTITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYLIGHTITALIC.OTF; sourceTree = "<group>"; };
+		474EC8382C1764730090FAC4 /* SFPRODISPLAYSEMIBOLDITALIC.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SFPRODISPLAYSEMIBOLDITALIC.OTF; sourceTree = "<group>"; };
+		474EC83C2C176B460090FAC4 /* PreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderView.swift; sourceTree = "<group>"; };
+		474EC83E2C176B4E0090FAC4 /* PreloaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +69,7 @@
 		474EC7E02C175FE40090FAC4 = {
 			isa = PBXGroup;
 			children = (
+				474EC8032C1763D40090FAC4 /* swiftgen.yml */,
 				474EC7EB2C175FE40090FAC4 /* Goobeltoin */,
 				474EC7EA2C175FE40090FAC4 /* Products */,
 			);
@@ -57,6 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				474EC8002C1760180090FAC4 /* App */,
+				474EC8402C176FDD0090FAC4 /* Helpers */,
+				474EC83A2C176B2F0090FAC4 /* Units */,
+				474EC8052C1763E80090FAC4 /* Resources */,
 				474EC7F52C175FE60090FAC4 /* Assets.xcassets */,
 				474EC7F72C175FE60090FAC4 /* LaunchScreen.storyboard */,
 				474EC7FA2C175FE60090FAC4 /* Info.plist */,
@@ -75,6 +108,85 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		474EC8052C1763E80090FAC4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				474EC8062C1763E80090FAC4 /* Images */,
+				474EC8092C1763E80090FAC4 /* Colors */,
+				474EC80C2C1763E80090FAC4 /* Fonts */,
+				474EC81A2C1763E80090FAC4 /* Localization */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		474EC8062C1763E80090FAC4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				474EC8072C1763E80090FAC4 /* Images.xcassets */,
+				474EC8082C1763E80090FAC4 /* Images.generated.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		474EC8092C1763E80090FAC4 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				474EC80A2C1763E80090FAC4 /* Colors.xcassets */,
+				474EC80B2C1763E80090FAC4 /* Colors.generated.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		474EC80C2C1763E80090FAC4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				474EC8322C1764720090FAC4 /* SFPRODISPLAYBLACKITALIC.OTF */,
+				474EC8352C1764730090FAC4 /* SFPRODISPLAYBOLD.OTF */,
+				474EC8312C1764720090FAC4 /* SFPRODISPLAYHEAVYITALIC.OTF */,
+				474EC8372C1764730090FAC4 /* SFPRODISPLAYLIGHTITALIC.OTF */,
+				474EC8332C1764730090FAC4 /* SFPRODISPLAYMEDIUM.OTF */,
+				474EC8362C1764730090FAC4 /* SFPRODISPLAYREGULAR.OTF */,
+				474EC8382C1764730090FAC4 /* SFPRODISPLAYSEMIBOLDITALIC.OTF */,
+				474EC8342C1764730090FAC4 /* SFPRODISPLAYTHINITALIC.OTF */,
+				474EC8302C1764720090FAC4 /* SFPRODISPLAYULTRALIGHTITALIC.OTF */,
+				474EC8112C1763E80090FAC4 /* Fonts.generated.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		474EC81A2C1763E80090FAC4 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				474EC81B2C1763E80090FAC4 /* Strings.generated.swift */,
+				474EC81C2C1763E80090FAC4 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		474EC83A2C176B2F0090FAC4 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				474EC83B2C176B340090FAC4 /* Preloader */,
+			);
+			path = Units;
+			sourceTree = "<group>";
+		};
+		474EC83B2C176B340090FAC4 /* Preloader */ = {
+			isa = PBXGroup;
+			children = (
+				474EC83C2C176B460090FAC4 /* PreloaderView.swift */,
+				474EC83E2C176B4E0090FAC4 /* PreloaderViewModel.swift */,
+			);
+			path = Preloader;
+			sourceTree = "<group>";
+		};
+		474EC8402C176FDD0090FAC4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,6 +197,7 @@
 				474EC7E52C175FE40090FAC4 /* Sources */,
 				474EC7E62C175FE40090FAC4 /* Frameworks */,
 				474EC7E72C175FE40090FAC4 /* Resources */,
+				474EC8392C1764C60090FAC4 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -133,12 +246,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				474EC81F2C1763E80090FAC4 /* Colors.xcassets in Resources */,
 				474EC7F92C175FE60090FAC4 /* LaunchScreen.storyboard in Resources */,
+				474EC81D2C1763E80090FAC4 /* Images.xcassets in Resources */,
+				474EC82F2C1763E80090FAC4 /* Localizable.strings in Resources */,
 				474EC7F62C175FE60090FAC4 /* Assets.xcassets in Resources */,
+				474EC8042C1763D40090FAC4 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		474EC8392C1764C60090FAC4 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftgen >/dev/null; then\n  swiftgen config run --config ${PROJECT_DIR}/swiftgen.yml\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		474EC7E52C175FE40090FAC4 /* Sources */ = {
@@ -146,9 +285,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				474EC7F12C175FE40090FAC4 /* ViewController.swift in Sources */,
+				474EC82E2C1763E80090FAC4 /* Strings.generated.swift in Sources */,
+				474EC83D2C176B470090FAC4 /* PreloaderView.swift in Sources */,
 				474EC7ED2C175FE40090FAC4 /* AppDelegate.swift in Sources */,
+				474EC8252C1763E80090FAC4 /* Fonts.generated.swift in Sources */,
+				474EC8202C1763E80090FAC4 /* Colors.generated.swift in Sources */,
 				474EC8022C1760370090FAC4 /* ContentView.swift in Sources */,
+				474EC83F2C176B4E0090FAC4 /* PreloaderViewModel.swift in Sources */,
 				474EC7EF2C175FE40090FAC4 /* SceneDelegate.swift in Sources */,
+				474EC81E2C1763E80090FAC4 /* Images.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +438,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AQV6DH83XK;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Goobeltoin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -324,6 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AQV6DH83XK;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Goobeltoin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
