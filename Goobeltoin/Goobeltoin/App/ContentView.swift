@@ -8,8 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = ContentViewModel()
     var body: some View {
-        PreloaderView()
+        Group {
+            if viewModel.showPreloader {
+                PreloaderView()
+            } else {
+                switch viewModel.viewState {
+                case .onboarding:
+                    OnboardingViewTabView()
+                        .environmentObject(viewModel)
+                case .main:
+                    Text("Tab Bar")
+//                    TabBar()
+//                        .environmentObject(viewModel)
+                }
+            }
+        }
+        .onAppear {
+            withAnimation {
+                self.viewModel.getFlow()
+            }
+        }
     }
 }
 

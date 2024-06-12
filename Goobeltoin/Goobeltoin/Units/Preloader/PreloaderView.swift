@@ -19,7 +19,7 @@ struct PreloaderView: View {
             Asset.loadingBackground.swiftUIImage
                 .resizable()
                 .scaledToFill()
-                .offset(y: -13)
+                .ignoresSafeArea()
             
             VStack(spacing: 34) {
                 Spacer()
