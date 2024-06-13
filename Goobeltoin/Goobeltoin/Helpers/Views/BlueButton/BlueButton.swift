@@ -23,7 +23,7 @@ struct BlueButton: View {
                 Spacer()
             }
             .padding(.vertical)
-            .background(Colors.blue.swiftUIColor)
+            .background(Colors.blueCustom.swiftUIColor)
             .cornerRadius(8, corners: .allCorners)
         }
 

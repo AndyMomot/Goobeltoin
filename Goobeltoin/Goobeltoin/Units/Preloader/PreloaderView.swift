@@ -42,11 +42,11 @@ struct PreloaderView: View {
                 
                 VStack(alignment: .center, spacing: 17) {
                     Text("Загрузка...")
-                        .foregroundStyle(Colors.blue.swiftUIColor)
+                        .foregroundStyle(Colors.blueCustom.swiftUIColor)
                         .font(Fonts.SFProDisplay.bold.swiftUIFont(fixedSize: 16))
                     
                     ProgressView(value: viewModel.progress)
-                        .tint(Colors.blue.swiftUIColor)
+                        .tint(Colors.blueCustom.swiftUIColor)
                         .frame(height: 8)
                 }
                 .padding(.horizontal, 18)

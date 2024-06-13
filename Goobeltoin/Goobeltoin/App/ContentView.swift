@@ -19,9 +19,8 @@ struct ContentView: View {
                     OnboardingViewTabView()
                         .environmentObject(viewModel)
                 case .main:
-                    Text("Tab Bar")
-//                    TabBar()
-//                        .environmentObject(viewModel)
+                    TabBar()
+                        .environmentObject(viewModel)
                 }
             }
         }

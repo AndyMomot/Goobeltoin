@@ -40,7 +40,7 @@ struct OnboardingView: View {
                             ForEach(arrange, id: \.self) { index in
                                 var color: Color {
                                     if index == item.position {
-                                        return Colors.blue.swiftUIColor
+                                        return Colors.blueCustom.swiftUIColor
                                     } else {
                                         return Colors.grayCustom.swiftUIColor
                                     }
@@ -82,7 +82,7 @@ struct OnboardingView: View {
         }
         .sheet(isPresented: $viewModel.showPrivacyPolicy) {
             if let url = viewModel.privacyPolicyURL {
-                WebView(url: viewModel.privacyPolicyURL)
+                WebView(url: url)
             }
         }
     }
