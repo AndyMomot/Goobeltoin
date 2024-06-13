@@ -9,7 +9,7 @@ import Foundation
 
 extension TabBar {
     final class TabBarViewModel: ObservableObject {
-        @Published var selection = TabBarSelectionView.analysis.rawValue
+        @Published var selection = TabBarSelectionView.passiveIncome.rawValue
     }
 }
 

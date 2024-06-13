@@ -15,7 +15,7 @@ struct TabBar: View {
             Text("Analysis")
                 .tag(TabBarSelectionView.analysis.rawValue)
             
-            Text("Passive Income")
+            PassiveIncomeView()
                 .tag(TabBarSelectionView.passiveIncome.rawValue)
             
             Text("Financial Condition")
