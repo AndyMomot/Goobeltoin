@@ -10,22 +10,22 @@ import Foundation
 extension PassiveIncomeView {
     final class PassiveIncomeViewModel: ObservableObject {
         @Published var searchText = ""
+        @Published var showAddPassiveIncome = false
     }
 }
 
 extension PassiveIncomeView {
     struct PassiveIncomeItem: Identifiable, Codable {
         private(set) var id = UUID().uuidString
+        private(set) var date = Date()
         var type: ItemType
         var title: String
         var income: Double
     }
-    
-    
 }
 
 extension PassiveIncomeView.PassiveIncomeItem {
-    enum ItemType: String, Codable {
+    enum ItemType: String, Codable, CaseIterable {
         case bankDeposit
         case buyingBonds
         case cryptocurrency

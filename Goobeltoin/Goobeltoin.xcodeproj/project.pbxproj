@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47208C522C1CA5FC00E2B2F5 /* AddPassiveIncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47208C512C1CA5FC00E2B2F5 /* AddPassiveIncomeView.swift */; };
+		47208C542C1CA60500E2B2F5 /* AddPassiveIncomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47208C532C1CA60500E2B2F5 /* AddPassiveIncomeViewModel.swift */; };
+		47208C582C1CAA6A00E2B2F5 /* PassiveIncomeOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47208C572C1CAA6A00E2B2F5 /* PassiveIncomeOptionCell.swift */; };
+		47208C5D2C1CB17C00E2B2F5 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47208C5C2C1CB17C00E2B2F5 /* InputFieldView.swift */; };
 		474EA8C82C1ADC6700609B5C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EA8C72C1ADC6700609B5C /* TabBar.swift */; };
 		474EA8CC2C1ADD3500609B5C /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EA8CB2C1ADD3500609B5C /* TabBarViewModel.swift */; };
 		474EA8CE2C1ADD4A00609B5C /* TabBarCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EA8CD2C1ADD4A00609B5C /* TabBarCustomView.swift */; };
@@ -43,6 +47,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47208C512C1CA5FC00E2B2F5 /* AddPassiveIncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPassiveIncomeView.swift; sourceTree = "<group>"; };
+		47208C532C1CA60500E2B2F5 /* AddPassiveIncomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPassiveIncomeViewModel.swift; sourceTree = "<group>"; };
+		47208C572C1CAA6A00E2B2F5 /* PassiveIncomeOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveIncomeOptionCell.swift; sourceTree = "<group>"; };
+		47208C5C2C1CB17C00E2B2F5 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 		474EA8C72C1ADC6700609B5C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		474EA8CB2C1ADD3500609B5C /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		474EA8CD2C1ADD4A00609B5C /* TabBarCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCustomView.swift; sourceTree = "<group>"; };
@@ -100,6 +108,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47208C502C1CA5E200E2B2F5 /* AddPassiveIncome */ = {
+			isa = PBXGroup;
+			children = (
+				47208C562C1CAA4E00E2B2F5 /* Cells */,
+				47208C512C1CA5FC00E2B2F5 /* AddPassiveIncomeView.swift */,
+				47208C532C1CA60500E2B2F5 /* AddPassiveIncomeViewModel.swift */,
+			);
+			path = AddPassiveIncome;
+			sourceTree = "<group>";
+		};
+		47208C552C1CA66C00E2B2F5 /* PassiveIncomeView */ = {
+			isa = PBXGroup;
+			children = (
+				474EA8DD2C1B4B3B00609B5C /* PassiveIncomeView.swift */,
+				474EA8DF2C1B4B4200609B5C /* PassiveIncomeViewModel.swift */,
+			);
+			path = PassiveIncomeView;
+			sourceTree = "<group>";
+		};
+		47208C562C1CAA4E00E2B2F5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				47208C572C1CAA6A00E2B2F5 /* PassiveIncomeOptionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		47208C592C1CB14500E2B2F5 /* InputField */ = {
+			isa = PBXGroup;
+			children = (
+				47208C5C2C1CB17C00E2B2F5 /* InputFieldView.swift */,
+			);
+			path = InputField;
+			sourceTree = "<group>";
+		};
 		474EA8C62C1ADC2700609B5C /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,8 +164,8 @@
 		474EA8DC2C1B4B1F00609B5C /* PassiveIncome */ = {
 			isa = PBXGroup;
 			children = (
-				474EA8DD2C1B4B3B00609B5C /* PassiveIncomeView.swift */,
-				474EA8DF2C1B4B4200609B5C /* PassiveIncomeViewModel.swift */,
+				47208C552C1CA66C00E2B2F5 /* PassiveIncomeView */,
+				47208C502C1CA5E200E2B2F5 /* AddPassiveIncome */,
 			);
 			path = PassiveIncome;
 			sourceTree = "<group>";
@@ -333,6 +376,7 @@
 		474EC8722C1A0DCA0090FAC4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				47208C592C1CB14500E2B2F5 /* InputField */,
 				474EA8E72C1B5A8400609B5C /* SearchView */,
 				474EA8E42C1B528D00609B5C /* FilterView */,
 				474EA8E12C1B4BC500609B5C /* TopButtons */,
@@ -472,8 +516,11 @@
 				474EC7ED2C175FE40090FAC4 /* AppDelegate.swift in Sources */,
 				474EC8252C1763E80090FAC4 /* Fonts.generated.swift in Sources */,
 				474EC86F2C1A0AF50090FAC4 /* OnboardingViewTabView.swift in Sources */,
+				47208C542C1CA60500E2B2F5 /* AddPassiveIncomeViewModel.swift in Sources */,
 				474EC8202C1763E80090FAC4 /* Colors.generated.swift in Sources */,
 				474EA8E32C1B4BF900609B5C /* TopButtonsView.swift in Sources */,
+				47208C522C1CA5FC00E2B2F5 /* AddPassiveIncomeView.swift in Sources */,
+				47208C582C1CAA6A00E2B2F5 /* PassiveIncomeOptionCell.swift in Sources */,
 				474EC8742C1A0DDC0090FAC4 /* BlueButton.swift in Sources */,
 				474EA8CE2C1ADD4A00609B5C /* TabBarCustomView.swift in Sources */,
 				474EC8652C1A06C50090FAC4 /* DefaultsService.swift in Sources */,
@@ -487,6 +534,7 @@
 				474EC81E2C1763E80090FAC4 /* Images.generated.swift in Sources */,
 				474EC8662C1A06C50090FAC4 /* FileManagerService.swift in Sources */,
 				474EC86B2C1A08B80090FAC4 /* OnboardingView.swift in Sources */,
+				47208C5D2C1CB17C00E2B2F5 /* InputFieldView.swift in Sources */,
 				474EC87B2C1A11870090FAC4 /* SwiftUIViewWebView.swift in Sources */,
 				474EA8CC2C1ADD3500609B5C /* TabBarViewModel.swift in Sources */,
 				474EA8C82C1ADC6700609B5C /* TabBar.swift in Sources */,

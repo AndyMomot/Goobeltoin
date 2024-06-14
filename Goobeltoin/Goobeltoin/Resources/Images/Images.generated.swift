@@ -25,6 +25,7 @@ internal enum Asset {
   internal static let onboarding1 = ImageAsset(name: "onboarding1")
   internal static let onboarding2 = ImageAsset(name: "onboarding2")
   internal static let onboarding3 = ImageAsset(name: "onboarding3")
+  internal static let advertisingCars = ImageAsset(name: "advertisingCars")
   internal static let bankDeposit = ImageAsset(name: "bankDeposit")
   internal static let business = ImageAsset(name: "business")
   internal static let buyingBonds = ImageAsset(name: "buyingBonds")
