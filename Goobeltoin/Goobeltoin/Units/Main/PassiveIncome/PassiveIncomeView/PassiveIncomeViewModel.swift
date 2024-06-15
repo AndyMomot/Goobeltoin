@@ -11,6 +11,13 @@ extension PassiveIncomeView {
     final class PassiveIncomeViewModel: ObservableObject {
         @Published var searchText = ""
         @Published var showAddPassiveIncome = false
+        @Published var incomeItems: [PassiveIncomeView.PassiveIncomeItem] = []
+        
+        func getIncomeItems() {
+            DispatchQueue.main.async { [weak self] in
+                self?.incomeItems = DefaultsService.passiveIncomes
+            }
+        }
     }
 }
 
@@ -21,6 +28,7 @@ extension PassiveIncomeView {
         var type: ItemType
         var title: String
         var income: Double
+        var incomePeriod: IncomePeriod
     }
 }
 
@@ -65,5 +73,13 @@ extension PassiveIncomeView.PassiveIncomeItem {
         var image: String {
             rawValue
         }
+    }
+    
+    enum IncomePeriod: String, Codable, CaseIterable {
+        case week = "Неделя"
+        case month = "Месяц"
+        case quarter = "Квартал"
+        case sixMonths = "Полгода"
+        case year = "Год"
     }
 }

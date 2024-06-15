@@ -49,14 +49,21 @@ struct PassiveIncomeView: View {
                                 }
                             }
                             
-                            Spacer()
+                            ScrollView(showsIndicators: false) {
+                                VStack(spacing: 10) {
+                                    ForEach(viewModel.incomeItems) { item in
+                                        PassiveIncomeCell(item: item) {
+                                            
+                                        }
+                                    }
+                                }
+                            }
                         }
                         .padding(.vertical)
                     }
                     .padding()
                     .background(.white)
                     .cornerRadius(48, corners: [.topLeft, .topRight])
-                    .ignoresSafeArea(edges: .bottom)
                     .overlay {
                         VStack {
                             Spacer()
@@ -84,8 +91,13 @@ struct PassiveIncomeView: View {
                 }
             }
             .navigationDestination(isPresented: $viewModel.showAddPassiveIncome) {
-                AddPassiveIncomeView()
+                AddNewPassiveIncomeView {
+                    viewModel.getIncomeItems()
+                }
             }
+        }
+        .onAppear {
+            viewModel.getIncomeItems()
         }
     }
 }

@@ -10,6 +10,9 @@ import SwiftUI
 struct InputFieldView: View {
     var title: String
     @Binding var text: String
+    var isRightButton = false
+    
+    var onRightButton: (() -> Void)?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -24,14 +27,39 @@ struct InputFieldView: View {
                                 lineWidth: 1.0)
                 }
                 .overlay {
-                    TextField(text: $text) {
-                        Text("Введите данные...")
-                            .foregroundStyle(Colors.blueDark.swiftUIColor)
-                            .font(Fonts.SFProDisplay.lightItalic.swiftUIFont(size: 16))
+                    HStack {
+                        if isRightButton {
+                            Text(text)
+                                .foregroundStyle(Colors.blackCustom.swiftUIColor)
+                                .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 16))
+                                .onTapGesture {
+                                    onRightButton?()
+                                }
                             
+                            Spacer()
+                            
+                            Button {
+                                withAnimation {
+                                    onRightButton?()
+                                }
+                            } label: {
+                                Asset.arrowDown.swiftUIImage
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 24)
+                                    .padding(.horizontal)
+                            }
+                        } else {
+                            TextField(text: $text) {
+                                Text("Введите данные...")
+                                    .foregroundStyle(Colors.blueDark.swiftUIColor)
+                                    .font(Fonts.SFProDisplay.lightItalic.swiftUIFont(size: 16))
+                                    
+                            }
+                            .foregroundStyle(Colors.blackCustom.swiftUIColor)
+                            .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 16))
+                        }
                     }
-                    .foregroundStyle(Colors.blackCustom.swiftUIColor)
-                    .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 16))
                     .padding(.horizontal)
                 }
         }

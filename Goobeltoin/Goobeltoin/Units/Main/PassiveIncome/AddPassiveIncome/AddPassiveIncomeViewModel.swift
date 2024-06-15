@@ -34,7 +34,8 @@ extension AddPassiveIncomeView {
                 let model = PassiveIncomeView.PassiveIncomeItem(
                     type: itemType,
                     title: name,
-                    income: amount
+                    income: amount,
+                    incomePeriod: .month
                 )
                 
                 DefaultsService.addPassiveIncome(item: model)

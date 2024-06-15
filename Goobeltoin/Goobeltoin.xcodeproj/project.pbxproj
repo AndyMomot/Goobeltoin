@@ -44,6 +44,12 @@
 		474EC8742C1A0DDC0090FAC4 /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC8732C1A0DDC0090FAC4 /* BlueButton.swift */; };
 		474EC8772C1A0EC80090FAC4 /* View+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC8762C1A0EC80090FAC4 /* View+Additions.swift */; };
 		474EC87B2C1A11870090FAC4 /* SwiftUIViewWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC87A2C1A11870090FAC4 /* SwiftUIViewWebView.swift */; };
+		47CBB3052C1DA20A000F2E81 /* PassiveIncomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB3042C1DA20A000F2E81 /* PassiveIncomeCell.swift */; };
+		47CBB3072C1DA603000F2E81 /* Double+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB3062C1DA603000F2E81 /* Double+Additions.swift */; };
+		47CBB30A2C1DADDD000F2E81 /* AddNewPassiveIncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB3092C1DADDD000F2E81 /* AddNewPassiveIncomeView.swift */; };
+		47CBB30C2C1DADE4000F2E81 /* AddNewPassiveIncomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB30B2C1DADE4000F2E81 /* AddNewPassiveIncomeViewModel.swift */; };
+		47CBB30F2C1DB4B3000F2E81 /* IncomeTypeDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB30E2C1DB4B3000F2E81 /* IncomeTypeDropDownView.swift */; };
+		47CBB3132C1DBDA6000F2E81 /* IncomePeriodDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB3122C1DBDA6000F2E81 /* IncomePeriodDropDownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +101,12 @@
 		474EC8732C1A0DDC0090FAC4 /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
 		474EC8762C1A0EC80090FAC4 /* View+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Additions.swift"; sourceTree = "<group>"; };
 		474EC87A2C1A11870090FAC4 /* SwiftUIViewWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIViewWebView.swift; sourceTree = "<group>"; };
+		47CBB3042C1DA20A000F2E81 /* PassiveIncomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveIncomeCell.swift; sourceTree = "<group>"; };
+		47CBB3062C1DA603000F2E81 /* Double+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Additions.swift"; sourceTree = "<group>"; };
+		47CBB3092C1DADDD000F2E81 /* AddNewPassiveIncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPassiveIncomeView.swift; sourceTree = "<group>"; };
+		47CBB30B2C1DADE4000F2E81 /* AddNewPassiveIncomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPassiveIncomeViewModel.swift; sourceTree = "<group>"; };
+		47CBB30E2C1DB4B3000F2E81 /* IncomeTypeDropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTypeDropDownView.swift; sourceTree = "<group>"; };
+		47CBB3122C1DBDA6000F2E81 /* IncomePeriodDropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomePeriodDropDownView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +133,7 @@
 		47208C552C1CA66C00E2B2F5 /* PassiveIncomeView */ = {
 			isa = PBXGroup;
 			children = (
+				47CBB3032C1DA1F7000F2E81 /* Cells */,
 				474EA8DD2C1B4B3B00609B5C /* PassiveIncomeView.swift */,
 				474EA8DF2C1B4B4200609B5C /* PassiveIncomeViewModel.swift */,
 			);
@@ -166,6 +179,7 @@
 			children = (
 				47208C552C1CA66C00E2B2F5 /* PassiveIncomeView */,
 				47208C502C1CA5E200E2B2F5 /* AddPassiveIncome */,
+				47CBB3082C1DADBD000F2E81 /* AddNewPassiveIncome */,
 			);
 			path = PassiveIncome;
 			sourceTree = "<group>";
@@ -389,6 +403,7 @@
 		474EC8752C1A0EB30090FAC4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				47CBB3062C1DA603000F2E81 /* Double+Additions.swift */,
 				474EC8762C1A0EC80090FAC4 /* View+Additions.swift */,
 			);
 			path = Extensions;
@@ -408,6 +423,33 @@
 				474EC87A2C1A11870090FAC4 /* SwiftUIViewWebView.swift */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		47CBB3032C1DA1F7000F2E81 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				47CBB3042C1DA20A000F2E81 /* PassiveIncomeCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		47CBB3082C1DADBD000F2E81 /* AddNewPassiveIncome */ = {
+			isa = PBXGroup;
+			children = (
+				47CBB30D2C1DB482000F2E81 /* Views */,
+				47CBB3092C1DADDD000F2E81 /* AddNewPassiveIncomeView.swift */,
+				47CBB30B2C1DADE4000F2E81 /* AddNewPassiveIncomeViewModel.swift */,
+			);
+			path = AddNewPassiveIncome;
+			sourceTree = "<group>";
+		};
+		47CBB30D2C1DB482000F2E81 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47CBB30E2C1DB4B3000F2E81 /* IncomeTypeDropDownView.swift */,
+				47CBB3122C1DBDA6000F2E81 /* IncomePeriodDropDownView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47CBB30F2C1DB4B3000F2E81 /* IncomeTypeDropDownView.swift in Sources */,
 				474EA8E62C1B529700609B5C /* FilterView.swift in Sources */,
 				474EC7F12C175FE40090FAC4 /* ViewController.swift in Sources */,
 				474EA8E02C1B4B4200609B5C /* PassiveIncomeViewModel.swift in Sources */,
@@ -515,8 +558,11 @@
 				474EC83D2C176B470090FAC4 /* PreloaderView.swift in Sources */,
 				474EC7ED2C175FE40090FAC4 /* AppDelegate.swift in Sources */,
 				474EC8252C1763E80090FAC4 /* Fonts.generated.swift in Sources */,
+				47CBB30A2C1DADDD000F2E81 /* AddNewPassiveIncomeView.swift in Sources */,
+				47CBB3052C1DA20A000F2E81 /* PassiveIncomeCell.swift in Sources */,
 				474EC86F2C1A0AF50090FAC4 /* OnboardingViewTabView.swift in Sources */,
 				47208C542C1CA60500E2B2F5 /* AddPassiveIncomeViewModel.swift in Sources */,
+				47CBB30C2C1DADE4000F2E81 /* AddNewPassiveIncomeViewModel.swift in Sources */,
 				474EC8202C1763E80090FAC4 /* Colors.generated.swift in Sources */,
 				474EA8E32C1B4BF900609B5C /* TopButtonsView.swift in Sources */,
 				47208C522C1CA5FC00E2B2F5 /* AddPassiveIncomeView.swift in Sources */,
@@ -526,6 +572,7 @@
 				474EC8652C1A06C50090FAC4 /* DefaultsService.swift in Sources */,
 				474EC8022C1760370090FAC4 /* ContentView.swift in Sources */,
 				474EC83F2C176B4E0090FAC4 /* PreloaderViewModel.swift in Sources */,
+				47CBB3072C1DA603000F2E81 /* Double+Additions.swift in Sources */,
 				474EA8DE2C1B4B3B00609B5C /* PassiveIncomeView.swift in Sources */,
 				474EC86D2C1A08C00090FAC4 /* OnboardingViewModel.swift in Sources */,
 				474EC7EF2C175FE40090FAC4 /* SceneDelegate.swift in Sources */,
@@ -538,6 +585,7 @@
 				474EC87B2C1A11870090FAC4 /* SwiftUIViewWebView.swift in Sources */,
 				474EA8CC2C1ADD3500609B5C /* TabBarViewModel.swift in Sources */,
 				474EA8C82C1ADC6700609B5C /* TabBar.swift in Sources */,
+				47CBB3132C1DBDA6000F2E81 /* IncomePeriodDropDownView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

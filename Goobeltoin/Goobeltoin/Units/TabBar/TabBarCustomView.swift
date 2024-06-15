@@ -21,39 +21,43 @@ struct TabBarCustomView: View {
     }
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 48)
-            .foregroundStyle(Colors.blueCustom.swiftUIColor)
-            .overlay {
-                HStack {
-                    ForEach(arrange, id: \.self) { index in
-                        let item = items[index]
-                        let isSelectedItem = index == selectedItem
-                        
-                        Button {
-                            selectedItem = index
-                        } label: {
-                            Image(item.imageName)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(maxWidth: 40)
-                                .padding(.vertical, 8)
-                                .padding(.horizontal, 14)
-                                .overlay {
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .stroke(
-                                            isSelectedItem ? .white : .clear,
-                                            lineWidth: 1
-                                        )
-                                }
-                        }
-                        
-                        if index < arrange.count - 1 {
-                            Spacer()
+        ZStack {
+            Color.white
+            
+            RoundedRectangle(cornerRadius: 48)
+                .foregroundStyle(Colors.blueCustom.swiftUIColor)
+                .overlay {
+                    HStack {
+                        ForEach(arrange, id: \.self) { index in
+                            let item = items[index]
+                            let isSelectedItem = index == selectedItem
+                            
+                            Button {
+                                selectedItem = index
+                            } label: {
+                                Image(item.imageName)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(maxWidth: 40)
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal, 14)
+                                    .overlay {
+                                        RoundedRectangle(cornerRadius: 8)
+                                            .stroke(
+                                                isSelectedItem ? .white : .clear,
+                                                lineWidth: 1
+                                            )
+                                    }
+                            }
+                            
+                            if index < arrange.count - 1 {
+                                Spacer()
+                            }
                         }
                     }
-                }
-                .padding(.horizontal)
+                    .padding(.horizontal)
             }
+        }
     }
 }
 
