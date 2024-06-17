@@ -38,13 +38,21 @@ struct PassiveIncomeView: View {
                             
                             HStack(alignment: .top) {
                                 FilterView() { item in
-                                    
+                                    withAnimation {
+                                        viewModel.sortIncomeItems(with: item)
+                                    }
                                 }
                                 
                                 Spacer()
                                 
                                 VStack {
-                                    SearchView(text: $viewModel.searchText)
+                                    SearchView() { searchText in
+                                        if searchText.isEmpty {
+                                            viewModel.getIncomeItems()
+                                        } else {
+                                            viewModel.search(containing: searchText)
+                                        }
+                                    }
                                     Spacer()
                                 }
                             }
@@ -53,7 +61,8 @@ struct PassiveIncomeView: View {
                                 VStack(spacing: 10) {
                                     ForEach(viewModel.incomeItems) { item in
                                         PassiveIncomeCell(item: item) {
-                                            
+                                            viewModel.passiveIncomeToEdit = item
+                                            viewModel.showEditPassiveIncome.toggle()
                                         }
                                     }
                                 }
@@ -93,6 +102,13 @@ struct PassiveIncomeView: View {
             .navigationDestination(isPresented: $viewModel.showAddPassiveIncome) {
                 AddNewPassiveIncomeView {
                     viewModel.getIncomeItems()
+                }
+            }
+            .navigationDestination(isPresented: $viewModel.showEditPassiveIncome) {
+                if let item = viewModel.passiveIncomeToEdit {
+                    EditPassiveIncomeView(item: item) {
+                        viewModel.getIncomeItems()
+                    }
                 }
             }
         }

@@ -1,5 +1,5 @@
 //
-//  AddPassiveIncomeViewModel.swift
+//  EditPassiveIncomeViewModel.swift
 //  Goobeltoin
 //
 //  Created by Andrii Momot on 14.06.2024.
@@ -7,11 +7,10 @@
 
 import Foundation
 
-extension AddPassiveIncomeView {
-    final class AddPassiveIncomeViewModel: ObservableObject {
+extension EditPassiveIncomeView {
+    final class EditPassiveIncomeViewModel: ObservableObject {
         let passiveIncomeItems = PassiveIncomeView.PassiveIncomeItem.ItemType.allCases
         @Published var selectedPassiveIncomeItem: PassiveIncomeView.PassiveIncomeItem.ItemType?
-        @Published var name = ""
         @Published var amountText = ""
         
         func compareIncomeItems(input: PassiveIncomeView.PassiveIncomeItem.ItemType) -> Bool {
@@ -21,25 +20,26 @@ extension AddPassiveIncomeView {
             return input.rawValue == selectedPassiveIncomeItem.rawValue
         }
         
-        func onSaveData(completion: @escaping () -> Void) {
+        func onUpdate(item: PassiveIncomeView.PassiveIncomeItem, completion: @escaping () -> Void) {
             guard let itemType = selectedPassiveIncomeItem,
-                  !name.isEmpty,
-                  !amountText.isEmpty,
                   let amount = Double(amountText),
                   amount > .zero
             else { return }
             
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                let model = PassiveIncomeView.PassiveIncomeItem(
-                    type: itemType,
-                    title: name,
-                    income: amount,
-                    incomePeriod: .month
-                )
+            DispatchQueue.main.async {
+                var newItem = item
+                newItem.type = itemType
+                newItem.income = amount
                 
-                DefaultsService.addPassiveIncome(item: model)
-                completion()
+               var passiveIncomes = DefaultsService.passiveIncomes
+                
+                if let index = passiveIncomes.firstIndex(where: {
+                    $0.id == item.id
+                }) {
+                    passiveIncomes[index] = newItem
+                    DefaultsService.passiveIncomes = passiveIncomes
+                    completion()
+                }
             }
         }
     }

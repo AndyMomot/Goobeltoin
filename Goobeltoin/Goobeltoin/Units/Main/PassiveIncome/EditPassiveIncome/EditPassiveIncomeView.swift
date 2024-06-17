@@ -1,5 +1,5 @@
 //
-//  AddPassiveIncomeView.swift
+//  EditPassiveIncomeView.swift
 //  Goobeltoin
 //
 //  Created by Andrii Momot on 14.06.2024.
@@ -7,8 +7,12 @@
 
 import SwiftUI
 
-struct AddPassiveIncomeView: View {
-    @StateObject private var viewModel = AddPassiveIncomeViewModel()
+struct EditPassiveIncomeView: View {
+    
+    var item: PassiveIncomeView.PassiveIncomeItem
+    var onDismiss: (() -> Void)?
+    
+    @StateObject private var viewModel = EditPassiveIncomeViewModel()
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -21,6 +25,7 @@ struct AddPassiveIncomeView: View {
                 HStack {
                     Button {
                         dismiss.callAsFunction()
+                        onDismiss?()
                     } label: {
                         Asset.arrowDown.swiftUIImage
                             .rotationEffect(.degrees(90))
@@ -66,36 +71,37 @@ struct AddPassiveIncomeView: View {
                         }
                         .padding(.vertical)
                         
-                        VStack(spacing: 20) {
-                            InputFieldView(title: "Название источника доходов",
-                                           text: $viewModel.name)
-                            
-                            InputFieldView(title: "Размер дохода",
-                                           text: $viewModel.amountText)
-                            .keyboardType(.numberPad)
-                        }
+                        InputFieldView(title: "Размер дохода",
+                                       text: $viewModel.amountText)
+                        .keyboardType(.numberPad)
                     }
                     
                     BlueButton(title: "Внести данные") {
-                        viewModel.onSaveData {
+                        viewModel.onUpdate(item: item) {
                             dismiss.callAsFunction()
+                            onDismiss?()
                         }
                     }
                     .padding()
-                    .padding(.bottom,
-                             UIScreen.main.bounds.height * 0.1)
+                    .padding(.bottom)
                 }
                 .padding()
                 .background(.white)
                 .cornerRadius(48, corners: [.topLeft, .topRight])
-                
             }
-            .ignoresSafeArea(edges: .bottom)
         }
         .navigationBarBackButtonHidden()
+        .onAppear {
+            viewModel.selectedPassiveIncomeItem = item.type
+            viewModel.amountText = item.income.string()
+        }
     }
 }
 
 #Preview {
-    AddPassiveIncomeView()
+    EditPassiveIncomeView(item: .init(
+        type: .bankDeposit,
+        title: "Test",
+        income: 1000,
+        incomePeriod: .month)) {}
 }

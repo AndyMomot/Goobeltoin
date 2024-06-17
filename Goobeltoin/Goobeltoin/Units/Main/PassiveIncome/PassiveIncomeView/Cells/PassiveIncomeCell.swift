@@ -53,7 +53,7 @@ struct PassiveIncomeCell: View {
             }
             .padding(.trailing)
         }
-        .background(Colors.grayCustom.swiftUIColor)
+        .background(Colors.grayLite.swiftUIColor)
         .cornerRadius(48, corners: .allCorners)
     }
 }

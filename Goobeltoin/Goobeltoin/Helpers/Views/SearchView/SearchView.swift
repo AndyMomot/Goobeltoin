@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct SearchView: View {
-    @Binding var text: String
+    
+    var onTextChanged: (String) -> Void
+    
+    @State private var text: String = ""
     @State private var showTextField = false
     
     var body: some View {
@@ -20,6 +23,9 @@ struct SearchView: View {
                         .foregroundStyle(Colors.whiteDark.swiftUIColor)
                         .font(Fonts.SFProDisplay.thinItalic.swiftUIFont(size: 10))
                         .opacity(0.5)
+                        .onChange(of: text) { value in
+                            onTextChanged(text)
+                        }
                 }
                 .foregroundStyle(.black)
                 .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 12))
@@ -41,5 +47,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView(text: .constant(""))
+    SearchView() { _ in }
 }
