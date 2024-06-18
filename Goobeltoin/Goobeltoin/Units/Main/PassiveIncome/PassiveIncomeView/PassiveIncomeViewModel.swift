@@ -12,6 +12,7 @@ extension PassiveIncomeView {
         @Published var showAddPassiveIncome = false
         @Published var showEditPassiveIncome = false
         @Published var showSuccessScreen = false
+        @Published var showProfile = false
         @Published var incomeItems: [PassiveIncomeView.PassiveIncomeItem] = []
         
         var passiveIncomeToEdit: PassiveIncomeView.PassiveIncomeItem?
@@ -20,6 +21,15 @@ extension PassiveIncomeView {
         func getIncomeItems() {
             DispatchQueue.main.async { [weak self] in
                 self?.incomeItems = DefaultsService.passiveIncomes
+            }
+        }
+        
+        func onTopItemTapped(_ item: TopButtonsView.Item) {
+            switch item {
+            case .profile:
+                showProfile.toggle()
+            case .notifications:
+                break
             }
         }
         
@@ -216,7 +226,7 @@ extension PassiveIncomeView {
 }
 
 extension PassiveIncomeView.PassiveIncomeItem {
-    enum ItemType: String, Codable, CaseIterable {
+    enum ItemType: String, Codable, CaseIterable, Identifiable {
         case bankDeposit
         case buyingBonds
         case cryptocurrency
@@ -255,6 +265,10 @@ extension PassiveIncomeView.PassiveIncomeItem {
         
         var image: String {
             rawValue
+        }
+        
+        var id: String {
+            UUID().uuidString
         }
     }
     

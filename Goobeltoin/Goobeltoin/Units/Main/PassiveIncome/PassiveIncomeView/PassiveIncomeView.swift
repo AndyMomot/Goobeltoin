@@ -22,7 +22,7 @@ struct PassiveIncomeView: View {
                     HStack {
                         Spacer()
                         TopButtonsView { item in
-                            
+                            viewModel.onTopItemTapped(item)
                         }
                     }
                     .padding(.horizontal)
@@ -122,6 +122,9 @@ struct PassiveIncomeView: View {
             }
             .navigationDestination(isPresented: $viewModel.showSuccessScreen) {
                 SuccessView(text: viewModel.successScreenText)
+            }
+            .navigationDestination(isPresented: $viewModel.showProfile) {
+                ProfileView()
             }
         }
         .onAppear {

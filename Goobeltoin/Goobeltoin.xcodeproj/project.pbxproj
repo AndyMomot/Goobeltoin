@@ -51,6 +51,8 @@
 		47CBB30F2C1DB4B3000F2E81 /* IncomeTypeDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB30E2C1DB4B3000F2E81 /* IncomeTypeDropDownView.swift */; };
 		47CBB3132C1DBDA6000F2E81 /* IncomePeriodDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB3122C1DBDA6000F2E81 /* IncomePeriodDropDownView.swift */; };
 		47FE07982C21E8AE007C2AF1 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE07972C21E8AE007C2AF1 /* SuccessView.swift */; };
+		47FE079B2C21F8ED007C2AF1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE079A2C21F8ED007C2AF1 /* ProfileView.swift */; };
+		47FE079D2C21F8F4007C2AF1 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE079C2C21F8F4007C2AF1 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +111,8 @@
 		47CBB30E2C1DB4B3000F2E81 /* IncomeTypeDropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTypeDropDownView.swift; sourceTree = "<group>"; };
 		47CBB3122C1DBDA6000F2E81 /* IncomePeriodDropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomePeriodDropDownView.swift; sourceTree = "<group>"; };
 		47FE07972C21E8AE007C2AF1 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		47FE079A2C21F8ED007C2AF1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		47FE079C2C21F8F4007C2AF1 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 		474EA8DB2C1B4B1000609B5C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				47FE07992C21F8DD007C2AF1 /* Profile */,
 				47FE07962C21E89B007C2AF1 /* SuccessView */,
 				474EA8DC2C1B4B1F00609B5C /* PassiveIncome */,
 			);
@@ -463,6 +468,15 @@
 			path = SuccessView;
 			sourceTree = "<group>";
 		};
+		47FE07992C21F8DD007C2AF1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				47FE079A2C21F8ED007C2AF1 /* ProfileView.swift */,
+				47FE079C2C21F8F4007C2AF1 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -561,6 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47CBB30F2C1DB4B3000F2E81 /* IncomeTypeDropDownView.swift in Sources */,
+				47FE079B2C21F8ED007C2AF1 /* ProfileView.swift in Sources */,
 				474EA8E62C1B529700609B5C /* FilterView.swift in Sources */,
 				474EC7F12C175FE40090FAC4 /* ViewController.swift in Sources */,
 				474EA8E02C1B4B4200609B5C /* PassiveIncomeViewModel.swift in Sources */,
@@ -573,6 +588,7 @@
 				47CBB3052C1DA20A000F2E81 /* PassiveIncomeCell.swift in Sources */,
 				474EC86F2C1A0AF50090FAC4 /* OnboardingViewTabView.swift in Sources */,
 				47208C542C1CA60500E2B2F5 /* EditPassiveIncomeViewModel.swift in Sources */,
+				47FE079D2C21F8F4007C2AF1 /* ProfileViewModel.swift in Sources */,
 				47CBB30C2C1DADE4000F2E81 /* AddNewPassiveIncomeViewModel.swift in Sources */,
 				474EC8202C1763E80090FAC4 /* Colors.generated.swift in Sources */,
 				474EA8E32C1B4BF900609B5C /* TopButtonsView.swift in Sources */,

@@ -25,6 +25,8 @@ struct PassiveIncomeOptionCell: View {
             Text(item.title)
                 .foregroundStyle(.black)
                 .font(Fonts.SFProDisplay.bold.swiftUIFont(size: 10))
+            
+            Spacer()
         }
         .padding()
         .background(Colors.grayCustom.swiftUIColor)
