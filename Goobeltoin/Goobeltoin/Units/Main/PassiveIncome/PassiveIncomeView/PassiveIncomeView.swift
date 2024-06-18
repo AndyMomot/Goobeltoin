@@ -60,9 +60,8 @@ struct PassiveIncomeView: View {
                             ScrollView(showsIndicators: false) {
                                 VStack(spacing: 10) {
                                     ForEach(viewModel.incomeItems) { item in
-                                        PassiveIncomeCell(item: item) {
-                                            viewModel.passiveIncomeToEdit = item
-                                            viewModel.showEditPassiveIncome.toggle()
+                                        PassiveIncomeCell(item: item) { action in
+                                            viewModel.onPassiveIncomeCell(action: action)
                                         }
                                     }
                                 }
@@ -102,14 +101,27 @@ struct PassiveIncomeView: View {
             .navigationDestination(isPresented: $viewModel.showAddPassiveIncome) {
                 AddNewPassiveIncomeView {
                     viewModel.getIncomeItems()
+                    viewModel.successScreenText = "Ваш новый доход успешно добавлен!"
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                        viewModel.showSuccessScreen.toggle()
+                    }
                 }
             }
             .navigationDestination(isPresented: $viewModel.showEditPassiveIncome) {
                 if let item = viewModel.passiveIncomeToEdit {
                     EditPassiveIncomeView(item: item) {
                         viewModel.getIncomeItems()
+                        viewModel.successScreenText = "Вашы данные  успешно внесены!"
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                            viewModel.showSuccessScreen.toggle()
+                        }
                     }
                 }
+            }
+            .navigationDestination(isPresented: $viewModel.showSuccessScreen) {
+                SuccessView(text: viewModel.successScreenText)
             }
         }
         .onAppear {

@@ -11,9 +11,11 @@ extension PassiveIncomeView {
     final class PassiveIncomeViewModel: ObservableObject {
         @Published var showAddPassiveIncome = false
         @Published var showEditPassiveIncome = false
+        @Published var showSuccessScreen = false
         @Published var incomeItems: [PassiveIncomeView.PassiveIncomeItem] = []
         
         var passiveIncomeToEdit: PassiveIncomeView.PassiveIncomeItem?
+        var successScreenText = ""
         
         func getIncomeItems() {
             DispatchQueue.main.async { [weak self] in
@@ -176,6 +178,26 @@ extension PassiveIncomeView {
                 self.incomeItems = passiveIncomes.filter {
                     $0.title.localizedCaseInsensitiveContains(character) ||
                     $0.type.title.localizedCaseInsensitiveContains(character)
+                }
+            }
+        }
+        
+        func onPassiveIncomeCell(action: PassiveIncomeCell.Action) {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                switch action {
+                case .delete(let item):
+                    guard let index = self.incomeItems.firstIndex(where: {
+                        $0.id == item.id
+                    })
+                    else { return }
+                    self.incomeItems.remove(at: index)
+                    DefaultsService.passiveIncomes = self.incomeItems
+                    self.getIncomeItems()
+                    
+                case .plus(let item):
+                    self.passiveIncomeToEdit = item
+                    self.showEditPassiveIncome.toggle()
                 }
             }
         }

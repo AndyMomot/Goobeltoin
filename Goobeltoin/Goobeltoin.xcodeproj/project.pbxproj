@@ -50,6 +50,7 @@
 		47CBB30C2C1DADE4000F2E81 /* AddNewPassiveIncomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB30B2C1DADE4000F2E81 /* AddNewPassiveIncomeViewModel.swift */; };
 		47CBB30F2C1DB4B3000F2E81 /* IncomeTypeDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB30E2C1DB4B3000F2E81 /* IncomeTypeDropDownView.swift */; };
 		47CBB3132C1DBDA6000F2E81 /* IncomePeriodDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB3122C1DBDA6000F2E81 /* IncomePeriodDropDownView.swift */; };
+		47FE07982C21E8AE007C2AF1 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FE07972C21E8AE007C2AF1 /* SuccessView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 		47CBB30B2C1DADE4000F2E81 /* AddNewPassiveIncomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPassiveIncomeViewModel.swift; sourceTree = "<group>"; };
 		47CBB30E2C1DB4B3000F2E81 /* IncomeTypeDropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTypeDropDownView.swift; sourceTree = "<group>"; };
 		47CBB3122C1DBDA6000F2E81 /* IncomePeriodDropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomePeriodDropDownView.swift; sourceTree = "<group>"; };
+		47FE07972C21E8AE007C2AF1 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 		474EA8DB2C1B4B1000609B5C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				47FE07962C21E89B007C2AF1 /* SuccessView */,
 				474EA8DC2C1B4B1F00609B5C /* PassiveIncome */,
 			);
 			path = Main;
@@ -452,6 +455,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		47FE07962C21E89B007C2AF1 /* SuccessView */ = {
+			isa = PBXGroup;
+			children = (
+				47FE07972C21E8AE007C2AF1 /* SuccessView.swift */,
+			);
+			path = SuccessView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -577,6 +588,7 @@
 				474EC86D2C1A08C00090FAC4 /* OnboardingViewModel.swift in Sources */,
 				474EC7EF2C175FE40090FAC4 /* SceneDelegate.swift in Sources */,
 				474EA8E92C1B5A8F00609B5C /* SearchView.swift in Sources */,
+				47FE07982C21E8AE007C2AF1 /* SuccessView.swift in Sources */,
 				474EC8772C1A0EC80090FAC4 /* View+Additions.swift in Sources */,
 				474EC81E2C1763E80090FAC4 /* Images.generated.swift in Sources */,
 				474EC8662C1A06C50090FAC4 /* FileManagerService.swift in Sources */,

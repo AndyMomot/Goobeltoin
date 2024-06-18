@@ -47,6 +47,7 @@ internal enum Asset {
   internal static let notificationsIcon = ImageAsset(name: "notificationsIcon")
   internal static let profileIcon = ImageAsset(name: "profileIcon")
   internal static let searchIcon = ImageAsset(name: "searchIcon")
+  internal static let success = ImageAsset(name: "success")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

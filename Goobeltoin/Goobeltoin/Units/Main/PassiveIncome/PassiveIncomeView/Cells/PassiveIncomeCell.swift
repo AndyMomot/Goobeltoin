@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PassiveIncomeCell: View {
     var item: PassiveIncomeView.PassiveIncomeItem
-    var onPlus: () -> Void
+    var onAction: (Action) -> Void
     
     var body: some View {
         HStack(spacing: 20) {
@@ -31,10 +31,27 @@ struct PassiveIncomeCell: View {
                     .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 10))
                     .foregroundStyle(Colors.blackCustom.swiftUIColor)
                 
-                HStack {
+                HStack(spacing: 20) {
                     Spacer()
+                    
                     Button {
-                        onPlus()
+                        onAction(.delete(item: item))
+                    } label: {
+                        Circle()
+                            .foregroundStyle(Colors.redCustom.swiftUIColor)
+                            .frame(width: 41)
+                            .overlay {
+                                Image(systemName: "trash")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .foregroundStyle(.white)
+                                    .padding(10)
+                                    
+                            }
+                    }
+                
+                    Button {
+                        onAction(.plus(item: item))
                     } label: {
                         Circle()
                             .foregroundStyle(Colors.blueLite.swiftUIColor)
@@ -48,7 +65,6 @@ struct PassiveIncomeCell: View {
                                     
                             }
                     }
-
                 }
             }
             .padding(.trailing)
@@ -58,11 +74,18 @@ struct PassiveIncomeCell: View {
     }
 }
 
+extension PassiveIncomeCell {
+    enum Action {
+        case delete(item: PassiveIncomeView.PassiveIncomeItem)
+        case plus(item: PassiveIncomeView.PassiveIncomeItem)
+    }
+}
+
 #Preview {
     PassiveIncomeCell(item: .init(
         type: .bankDeposit,
         title: "Вклад в СберБанк",
         income: 500, 
         incomePeriod: .month)
-    ) {}
+    ) { _ in }
 }
