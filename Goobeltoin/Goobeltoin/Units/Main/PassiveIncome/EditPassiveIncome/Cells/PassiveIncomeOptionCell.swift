@@ -29,9 +29,9 @@ struct PassiveIncomeOptionCell: View {
             Spacer()
         }
         .padding()
-        .background(Colors.grayCustom.swiftUIColor)
+        .background(Colors.grayLite.swiftUIColor)
         .cornerRadius(48, corners: .allCorners)
-        .shadow(radius: 2)
+        .shadow(radius: 1)
     }
 }
 

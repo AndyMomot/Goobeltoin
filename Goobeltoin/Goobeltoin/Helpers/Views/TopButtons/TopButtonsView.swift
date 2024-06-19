@@ -15,20 +15,51 @@ struct TopButtonsView: View {
         .notifications
     ]
     
+    @State private var profileImage: Image = Asset.profileIcon.swiftUIImage
+    
     var body: some View {
         HStack(spacing: 10) {
             ForEach(items, id: \.rawValue) { item in
                 Button {
                     onSelect(item)
                 } label: {
-                    Image(item.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 41, height: 41)
+                    if item == .profile {
+                        profileImage
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 41, height: 41)
+                            .clipShape(Circle())
+                    } else {
+                        Image(item.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 41, height: 41)
+                    }
                 }
-
             }
         }
+        .onAppear {
+            DispatchQueue.main.async {
+                withAnimation {
+                    self.getProfileImage()
+                }
+            }
+        }
+    }
+}
+
+private extension TopButtonsView {
+    func getProfileImage() {
+        guard let pathID = DefaultsService.profile?.id else { return }
+        let path = FileManagerService.Keys.profileImage(id: pathID).path
+        guard let data = FileManagerService().getFile(forPath: path),
+              let uiImage = UIImage(data: data)
+        else {
+            profileImage = Asset.profilePlaceholder.swiftUIImage
+            return
+        }
+        
+        profileImage = Image(uiImage: uiImage)
     }
 }
 

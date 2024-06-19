@@ -10,7 +10,7 @@ import SwiftUI
 struct EditPassiveIncomeView: View {
     
     var item: PassiveIncomeView.PassiveIncomeItem
-    var onDismiss: (() -> Void)?
+    var onDismiss: ((Bool) -> Void)?
     
     @StateObject private var viewModel = EditPassiveIncomeViewModel()
     @Environment(\.dismiss) private var dismiss
@@ -25,7 +25,7 @@ struct EditPassiveIncomeView: View {
                 HStack {
                     Button {
                         dismiss.callAsFunction()
-                        onDismiss?()
+                        onDismiss?(false)
                     } label: {
                         Asset.arrowDown.swiftUIImage
                             .rotationEffect(.degrees(90))
@@ -79,7 +79,7 @@ struct EditPassiveIncomeView: View {
                     BlueButton(title: "Внести данные") {
                         viewModel.onUpdate(item: item) {
                             dismiss.callAsFunction()
-                            onDismiss?()
+                            onDismiss?(true)
                         }
                     }
                     .padding()
@@ -103,5 +103,5 @@ struct EditPassiveIncomeView: View {
         type: .bankDeposit,
         title: "Test",
         income: 1000,
-        incomePeriod: .month)) {}
+        incomePeriod: .month)) {_ in}
 }

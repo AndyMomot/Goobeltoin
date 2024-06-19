@@ -3,4 +3,54 @@
    uuid = "9D03A570-F7D9-498B-B1FF-00B3DC2BB544"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2BAC6C76-0CC8-4CB3-A3FD-26A0FE0EDA35"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Goobeltoin/Units/Main/Profile/ProfileViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "setProfileImage(pathID:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2BAC6C76-0CC8-4CB3-A3FD-26A0FE0EDA35 - 83df2a08c168bcf8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Goobeltoin.ProfileView.ProfileViewModel.setProfileImage(pathID: Swift.String) -&gt; ()"
+                  moduleName = "Goobeltoin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andriimomot/Freelance/Goobeltoin/Goobeltoin/Goobeltoin/Units/Main/Profile/ProfileViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "996">
+               </Location>
+               <Location
+                  uuid = "2BAC6C76-0CC8-4CB3-A3FD-26A0FE0EDA35 - 83df2a08c168bcf8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Goobeltoin.ProfileView.ProfileViewModel.setProfileImage(pathID: Swift.String) -&gt; ()"
+                  moduleName = "Goobeltoin"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andriimomot/Freelance/Goobeltoin/Goobeltoin/Goobeltoin/Units/Main/Profile/ProfileViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "852">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

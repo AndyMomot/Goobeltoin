@@ -44,6 +44,7 @@
 		474EC8742C1A0DDC0090FAC4 /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC8732C1A0DDC0090FAC4 /* BlueButton.swift */; };
 		474EC8772C1A0EC80090FAC4 /* View+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC8762C1A0EC80090FAC4 /* View+Additions.swift */; };
 		474EC87B2C1A11870090FAC4 /* SwiftUIViewWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC87A2C1A11870090FAC4 /* SwiftUIViewWebView.swift */; };
+		47A189C82C22CE7000157EDE /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A189C72C22CE7000157EDE /* ImagePicker.swift */; };
 		47CBB3052C1DA20A000F2E81 /* PassiveIncomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB3042C1DA20A000F2E81 /* PassiveIncomeCell.swift */; };
 		47CBB3072C1DA603000F2E81 /* Double+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB3062C1DA603000F2E81 /* Double+Additions.swift */; };
 		47CBB30A2C1DADDD000F2E81 /* AddNewPassiveIncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB3092C1DADDD000F2E81 /* AddNewPassiveIncomeView.swift */; };
@@ -104,6 +105,7 @@
 		474EC8732C1A0DDC0090FAC4 /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
 		474EC8762C1A0EC80090FAC4 /* View+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Additions.swift"; sourceTree = "<group>"; };
 		474EC87A2C1A11870090FAC4 /* SwiftUIViewWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIViewWebView.swift; sourceTree = "<group>"; };
+		47A189C72C22CE7000157EDE /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		47CBB3042C1DA20A000F2E81 /* PassiveIncomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveIncomeCell.swift; sourceTree = "<group>"; };
 		47CBB3062C1DA603000F2E81 /* Double+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Additions.swift"; sourceTree = "<group>"; };
 		47CBB3092C1DADDD000F2E81 /* AddNewPassiveIncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPassiveIncomeView.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 		474EC8402C176FDD0090FAC4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				47A189C62C22CE7000157EDE /* ImagePicker */,
 				474EC8722C1A0DCA0090FAC4 /* Views */,
 			);
 			path = Helpers;
@@ -431,6 +434,14 @@
 				474EC87A2C1A11870090FAC4 /* SwiftUIViewWebView.swift */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		47A189C62C22CE7000157EDE /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				47A189C72C22CE7000157EDE /* ImagePicker.swift */,
+			);
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 		47CBB3032C1DA1F7000F2E81 /* Cells */ = {
@@ -591,6 +602,7 @@
 				47FE079D2C21F8F4007C2AF1 /* ProfileViewModel.swift in Sources */,
 				47CBB30C2C1DADE4000F2E81 /* AddNewPassiveIncomeViewModel.swift in Sources */,
 				474EC8202C1763E80090FAC4 /* Colors.generated.swift in Sources */,
+				47A189C82C22CE7000157EDE /* ImagePicker.swift in Sources */,
 				474EA8E32C1B4BF900609B5C /* TopButtonsView.swift in Sources */,
 				47208C522C1CA5FC00E2B2F5 /* EditPassiveIncomeView.swift in Sources */,
 				47208C582C1CAA6A00E2B2F5 /* PassiveIncomeOptionCell.swift in Sources */,

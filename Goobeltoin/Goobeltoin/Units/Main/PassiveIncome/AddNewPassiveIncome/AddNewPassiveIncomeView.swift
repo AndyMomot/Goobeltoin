@@ -11,7 +11,7 @@ struct AddNewPassiveIncomeView: View {
     @StateObject private var viewModel = AddNewPassiveIncomeViewModel()
     @Environment(\.dismiss) private var dismiss
     
-    var onDismiss: (() -> Void)?
+    var onDismiss: ((Bool) -> Void)?
     
     var body: some View {
         ZStack {
@@ -23,7 +23,7 @@ struct AddNewPassiveIncomeView: View {
                 HStack {
                     Button {
                         dismiss.callAsFunction()
-                        onDismiss?()
+                        onDismiss?(false)
                     } label: {
                         Asset.arrowDown.swiftUIImage
                             .rotationEffect(.degrees(90))
@@ -98,7 +98,7 @@ struct AddNewPassiveIncomeView: View {
                         BlueButton(title: "Добавить") {
                             viewModel.onAddTapped {
                                 dismiss.callAsFunction()
-                                onDismiss?()
+                                onDismiss?(true)
                             }
                         }
                     }

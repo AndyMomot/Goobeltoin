@@ -99,23 +99,27 @@ struct PassiveIncomeView: View {
                 }
             }
             .navigationDestination(isPresented: $viewModel.showAddPassiveIncome) {
-                AddNewPassiveIncomeView {
+                AddNewPassiveIncomeView { didAdd in
                     viewModel.getIncomeItems()
                     viewModel.successScreenText = "Ваш новый доход успешно добавлен!"
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                        viewModel.showSuccessScreen.toggle()
+                    if didAdd {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                            viewModel.showSuccessScreen.toggle()
+                        }
                     }
                 }
             }
             .navigationDestination(isPresented: $viewModel.showEditPassiveIncome) {
                 if let item = viewModel.passiveIncomeToEdit {
-                    EditPassiveIncomeView(item: item) {
+                    EditPassiveIncomeView(item: item) { didAdd in
                         viewModel.getIncomeItems()
                         viewModel.successScreenText = "Вашы данные  успешно внесены!"
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                            viewModel.showSuccessScreen.toggle()
+                        if didAdd {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                                viewModel.showSuccessScreen.toggle()
+                            }
                         }
                     }
                 }

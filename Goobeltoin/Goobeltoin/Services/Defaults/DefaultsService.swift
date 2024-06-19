@@ -55,10 +55,37 @@ extension DefaultsService {
     }
 }
 
+extension DefaultsService {
+    static var profile: ProfileView.ProfileModel? {
+        get {
+            if let data = standard.object(forKey: Keys.profile.rawValue) as? Data {
+                let profile = try? JSONDecoder().decode(ProfileView.ProfileModel.self, from: data)
+                return profile
+            }
+            return nil
+        }
+        set {
+            if let data = try? JSONEncoder().encode(newValue) {
+                standard.setValue(data, forKey: Keys.profile.rawValue)
+            }
+        }
+    }
+}
+
+extension DefaultsService {
+    static func removeAll() {
+        if let bundleIdentifier = Bundle.main.bundleIdentifier {
+            standard.removePersistentDomain(forName: bundleIdentifier)
+            FileManagerService().removeAllFiles()
+        }
+    }
+}
+
 // MARK: - Keys
 extension DefaultsService {
     enum Keys: String {
         case flow
         case passiveIncome
+        case profile
     }
 }

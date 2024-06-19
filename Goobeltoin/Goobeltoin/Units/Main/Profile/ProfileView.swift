@@ -16,39 +16,25 @@ struct ProfileView: View {
         UIScreen.main.bounds
     }
     
-    private let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
-    
     var body: some View {
         ZStack {
             Asset.background2.swiftUIImage
                 .resizable()
                 .ignoresSafeArea()
             
-            VStack(spacing: 67) {
+            Rectangle()
+                .foregroundStyle(.white)
+                .cornerRadius(48, corners: [.topLeft, .topRight])
+                .padding(.top, 67)
+            
+            VStack(spacing: 30) {
                 HStack {
-                    Button {
-                        dismiss.callAsFunction()
-                    } label: {
-                        Asset.arrowDown.swiftUIImage
-                            .rotationEffect(.degrees(90))
-                            .padding()
-                    }
+                    Asset.pencile.swiftUIImage
+                        .padding()
+                        .hidden()
                     
                     Spacer()
-                }
-                
-                Rectangle()
-                    .foregroundStyle(.white)
-                    .cornerRadius(48, corners: [.topLeft, .topRight])
-            }
-            
-            VStack(spacing: 60) {
-                
-                VStack(alignment: .center, spacing: 35) {
-                    viewModel.profileImage
+                    Image(uiImage: viewModel.profileImage)
                         .resizable()
                         .scaledToFill()
                         .frame(
@@ -60,43 +46,114 @@ struct ProfileView: View {
                             Circle()
                                 .stroke(.white, lineWidth: 8)
                         }
-                        .padding(.top, bounds.width * 0.1)
-                    
-                    VStack(alignment: .center, spacing: 17) {
-                        Text(viewModel.fullName)
-                        Text(viewModel.phone)
-                        Text(viewModel.email)
-                    }
-                    .foregroundStyle(Colors.blackCustom.swiftUIColor)
-                    .font(Fonts.SFProDisplay.bold.swiftUIFont(fixedSize: 20))
-                    .multilineTextAlignment(.center)
-                }
-                
-                VStack(alignment: .leading, spacing: 20) {
-                    HStack {
-                        Text("Ваши действующие виды пасивного дохода")
-                            .foregroundStyle(Colors.blackCustom.swiftUIColor)
-                            .font(Fonts.SFProDisplay.bold.swiftUIFont(fixedSize: 22))
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.5)
-                        
-                        Spacer()
-                    }
-                    .padding(.horizontal)
-                    
-                    ScrollView {
-                        LazyVGrid(columns: (0..<2).map { _ in GridItem(.flexible()) }, spacing: 10) {
-                            ForEach(viewModel.itemTypes) { item in
-                                PassiveIncomeOptionCell(item: item)
+                        .overlay {
+                            if viewModel.isEditing {
+                                VStack {
+                                    Spacer()
+                                    HStack {
+                                        Spacer()
+                                        Button {
+                                            viewModel.showImagePicker.toggle()
+                                        } label: {
+                                            Asset.camera.swiftUIImage
+                                                .shadow(color: .white,
+                                                        radius: 3)
+                                        }
+                                    }
+                                }
+                                .padding()
                             }
                         }
-                    }
-                    .padding(.horizontal)
-                    
                     Spacer()
                     
                     Button {
-                        
+                        withAnimation {
+                            viewModel.isEditing.toggle()
+                        }
+                    } label: {
+                        Asset.pencile.swiftUIImage
+                    }
+                    .padding()
+                }
+                .padding(.top, bounds.width * 0.1)
+                
+                ScrollView(showsIndicators: false) {
+                    if viewModel.isEditing {
+                        VStack(alignment: .center, spacing: 17) {
+                            InputFieldView(
+                                title: "Имя",
+                                text: $viewModel.fullName
+                            )
+                            
+                            InputFieldView(
+                                title: "Телефон",
+                                text: $viewModel.phone
+                            )
+                            
+                            InputFieldView(
+                                title: "Электронная почта",
+                                text: $viewModel.email
+                            )
+                            
+                            Button {
+                                withAnimation {
+                                    viewModel.isEditing.toggle()
+                                }
+                                viewModel.setProfile()
+                            } label: {
+                                HStack {
+                                    Spacer()
+                                    Text("Сохранить")
+                                        .foregroundStyle(Colors.blueCustom.swiftUIColor)
+                                        .font(Fonts.SFProDisplay.medium.swiftUIFont(fixedSize: 20))
+                                        .multilineTextAlignment(.center)
+                                    Spacer()
+                                }
+                            }
+                            .padding()
+                        }
+                        .padding(.horizontal)
+                    } else {
+                        VStack(alignment: .center, spacing: 17) {
+                            if !viewModel.fullName.isEmpty {
+                                Text(viewModel.fullName)
+                            }
+                            if !viewModel.phone.isEmpty {
+                                Text(viewModel.phone)
+                            }
+                            if !viewModel.email.isEmpty {
+                                Text(viewModel.email)
+                            }
+                        }
+                        .foregroundStyle(Colors.blackCustom.swiftUIColor)
+                        .font(Fonts.SFProDisplay.bold.swiftUIFont(fixedSize: 20))
+                        .multilineTextAlignment(.center)
+                    }
+                    
+                    if !viewModel.itemTypes.isEmpty {
+                        VStack(alignment: .leading, spacing: 20) {
+                            HStack {
+                                Text("Ваши действующие виды пасивного дохода")
+                                    .foregroundStyle(Colors.blackCustom.swiftUIColor)
+                                    .font(Fonts.SFProDisplay.bold.swiftUIFont(fixedSize: 22))
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.5)
+                                
+                                Spacer()
+                            }
+                            LazyVGrid(columns: (0..<2).map { _ in GridItem(.flexible()) }, spacing: 10) {
+                                ForEach(viewModel.itemTypes) { item in
+                                    PassiveIncomeOptionCell(item: item)
+                                }
+                            }
+                        }
+                        .padding()
+                    }
+                }
+                
+                if viewModel.profile != nil || !viewModel.itemTypes.isEmpty {
+                    Button {
+                        viewModel.deleteProfile()
                     } label: {
                         HStack {
                             Spacer()
@@ -110,11 +167,31 @@ struct ProfileView: View {
                     .padding()
                 }
             }
+            
+            VStack {
+                HStack {
+                    Button {
+                        dismiss.callAsFunction()
+                    } label: {
+                        Asset.arrowDown.swiftUIImage
+                            .rotationEffect(.degrees(90))
+                            .padding()
+                    }
+                    
+                    Spacer()
+                }
+                
+                Spacer()
+            }
         }
         .onAppear {
+            viewModel.getProfile()
             viewModel.getIncomeItems()
         }
         .navigationBarBackButtonHidden()
+        .sheet(isPresented: $viewModel.showImagePicker) {
+            ImagePicker(selectedImage: $viewModel.profileImage)
+        }
     }
 }
 
