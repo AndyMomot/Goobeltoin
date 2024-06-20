@@ -45,6 +45,10 @@
 		474EC8772C1A0EC80090FAC4 /* View+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC8762C1A0EC80090FAC4 /* View+Additions.swift */; };
 		474EC87B2C1A11870090FAC4 /* SwiftUIViewWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EC87A2C1A11870090FAC4 /* SwiftUIViewWebView.swift */; };
 		47A189C82C22CE7000157EDE /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A189C72C22CE7000157EDE /* ImagePicker.swift */; };
+		47A189CD2C22FC7B00157EDE /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A189CC2C22FC7B00157EDE /* AnalysisView.swift */; };
+		47A189CF2C22FC8300157EDE /* AnalysisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A189CE2C22FC8300157EDE /* AnalysisViewModel.swift */; };
+		47A189E02C2471B300157EDE /* PieChartCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A189DF2C2471B300157EDE /* PieChartCustomView.swift */; };
+		47A189E22C2471CD00157EDE /* PieSliceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A189E12C2471CD00157EDE /* PieSliceView.swift */; };
 		47CBB3052C1DA20A000F2E81 /* PassiveIncomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB3042C1DA20A000F2E81 /* PassiveIncomeCell.swift */; };
 		47CBB3072C1DA603000F2E81 /* Double+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB3062C1DA603000F2E81 /* Double+Additions.swift */; };
 		47CBB30A2C1DADDD000F2E81 /* AddNewPassiveIncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CBB3092C1DADDD000F2E81 /* AddNewPassiveIncomeView.swift */; };
@@ -106,6 +110,10 @@
 		474EC8762C1A0EC80090FAC4 /* View+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Additions.swift"; sourceTree = "<group>"; };
 		474EC87A2C1A11870090FAC4 /* SwiftUIViewWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIViewWebView.swift; sourceTree = "<group>"; };
 		47A189C72C22CE7000157EDE /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		47A189CC2C22FC7B00157EDE /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
+		47A189CE2C22FC8300157EDE /* AnalysisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewModel.swift; sourceTree = "<group>"; };
+		47A189DF2C2471B300157EDE /* PieChartCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartCustomView.swift; sourceTree = "<group>"; };
+		47A189E12C2471CD00157EDE /* PieSliceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceView.swift; sourceTree = "<group>"; };
 		47CBB3042C1DA20A000F2E81 /* PassiveIncomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassiveIncomeCell.swift; sourceTree = "<group>"; };
 		47CBB3062C1DA603000F2E81 /* Double+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Additions.swift"; sourceTree = "<group>"; };
 		47CBB3092C1DADDD000F2E81 /* AddNewPassiveIncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPassiveIncomeView.swift; sourceTree = "<group>"; };
@@ -179,6 +187,7 @@
 			children = (
 				47FE07992C21F8DD007C2AF1 /* Profile */,
 				47FE07962C21E89B007C2AF1 /* SuccessView */,
+				47A189CB2C22FC6C00157EDE /* Analysis */,
 				474EA8DC2C1B4B1F00609B5C /* PassiveIncome */,
 			);
 			path = Main;
@@ -341,6 +350,7 @@
 		474EC8402C176FDD0090FAC4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				47A189DE2C2471AA00157EDE /* PieChartView */,
 				47A189C62C22CE7000157EDE /* ImagePicker */,
 				474EC8722C1A0DCA0090FAC4 /* Views */,
 			);
@@ -444,6 +454,24 @@
 			path = ImagePicker;
 			sourceTree = "<group>";
 		};
+		47A189CB2C22FC6C00157EDE /* Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				47A189CC2C22FC7B00157EDE /* AnalysisView.swift */,
+				47A189CE2C22FC8300157EDE /* AnalysisViewModel.swift */,
+			);
+			path = Analysis;
+			sourceTree = "<group>";
+		};
+		47A189DE2C2471AA00157EDE /* PieChartView */ = {
+			isa = PBXGroup;
+			children = (
+				47A189DF2C2471B300157EDE /* PieChartCustomView.swift */,
+				47A189E12C2471CD00157EDE /* PieSliceView.swift */,
+			);
+			path = PieChartView;
+			sourceTree = "<group>";
+		};
 		47CBB3032C1DA1F7000F2E81 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +533,8 @@
 			dependencies = (
 			);
 			name = Goobeltoin;
+			packageProductDependencies = (
+			);
 			productName = Goobeltoin;
 			productReference = 474EC7E92C175FE40090FAC4 /* Goobeltoin.app */;
 			productType = "com.apple.product-type.application";
@@ -533,6 +563,8 @@
 				Base,
 			);
 			mainGroup = 474EC7E02C175FE40090FAC4;
+			packageReferences = (
+			);
 			productRefGroup = 474EC7EA2C175FE40090FAC4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -589,6 +621,8 @@
 				47FE079B2C21F8ED007C2AF1 /* ProfileView.swift in Sources */,
 				474EA8E62C1B529700609B5C /* FilterView.swift in Sources */,
 				474EC7F12C175FE40090FAC4 /* ViewController.swift in Sources */,
+				47A189E02C2471B300157EDE /* PieChartCustomView.swift in Sources */,
+				47A189E22C2471CD00157EDE /* PieSliceView.swift in Sources */,
 				474EA8E02C1B4B4200609B5C /* PassiveIncomeViewModel.swift in Sources */,
 				474EC8682C1A07400090FAC4 /* ContentViewModel.swift in Sources */,
 				474EC82E2C1763E80090FAC4 /* Strings.generated.swift in Sources */,
@@ -601,12 +635,14 @@
 				47208C542C1CA60500E2B2F5 /* EditPassiveIncomeViewModel.swift in Sources */,
 				47FE079D2C21F8F4007C2AF1 /* ProfileViewModel.swift in Sources */,
 				47CBB30C2C1DADE4000F2E81 /* AddNewPassiveIncomeViewModel.swift in Sources */,
+				47A189CF2C22FC8300157EDE /* AnalysisViewModel.swift in Sources */,
 				474EC8202C1763E80090FAC4 /* Colors.generated.swift in Sources */,
 				47A189C82C22CE7000157EDE /* ImagePicker.swift in Sources */,
 				474EA8E32C1B4BF900609B5C /* TopButtonsView.swift in Sources */,
 				47208C522C1CA5FC00E2B2F5 /* EditPassiveIncomeView.swift in Sources */,
 				47208C582C1CAA6A00E2B2F5 /* PassiveIncomeOptionCell.swift in Sources */,
 				474EC8742C1A0DDC0090FAC4 /* BlueButton.swift in Sources */,
+				47A189CD2C22FC7B00157EDE /* AnalysisView.swift in Sources */,
 				474EA8CE2C1ADD4A00609B5C /* TabBarCustomView.swift in Sources */,
 				474EC8652C1A06C50090FAC4 /* DefaultsService.swift in Sources */,
 				474EC8022C1760370090FAC4 /* ContentView.swift in Sources */,

@@ -29,11 +29,16 @@ struct TopButtonsView: View {
                             .scaledToFill()
                             .frame(width: 41, height: 41)
                             .clipShape(Circle())
+                            .overlay {
+                                Circle()
+                                    .stroke(.white, lineWidth: 3)
+                            }
                     } else {
                         Image(item.image)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 41, height: 41)
+                            .clipShape(Circle())
                     }
                 }
             }
@@ -50,12 +55,15 @@ struct TopButtonsView: View {
 
 private extension TopButtonsView {
     func getProfileImage() {
-        guard let pathID = DefaultsService.profile?.id else { return }
+        guard let pathID = DefaultsService.profile?.id else {
+            profileImage = Asset.profileIcon.swiftUIImage
+            return
+        }
         let path = FileManagerService.Keys.profileImage(id: pathID).path
         guard let data = FileManagerService().getFile(forPath: path),
               let uiImage = UIImage(data: data)
         else {
-            profileImage = Asset.profilePlaceholder.swiftUIImage
+            profileImage = Asset.profileIcon.swiftUIImage
             return
         }
         

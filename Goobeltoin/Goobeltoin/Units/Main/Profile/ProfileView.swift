@@ -25,7 +25,7 @@ struct ProfileView: View {
             Rectangle()
                 .foregroundStyle(.white)
                 .cornerRadius(48, corners: [.topLeft, .topRight])
-                .padding(.top, 67)
+                .padding(.top, 70)
             
             VStack(spacing: 30) {
                 HStack {
@@ -74,6 +74,7 @@ struct ProfileView: View {
                         Asset.pencile.swiftUIImage
                     }
                     .padding()
+                    .hidden(viewModel.profile == nil)
                 }
                 .padding(.top, bounds.width * 0.1)
                 
@@ -81,7 +82,7 @@ struct ProfileView: View {
                     if viewModel.isEditing {
                         VStack(alignment: .center, spacing: 17) {
                             InputFieldView(
-                                title: "Имя",
+                                title: "ФИО",
                                 text: $viewModel.fullName
                             )
                             
@@ -91,15 +92,17 @@ struct ProfileView: View {
                             )
                             
                             InputFieldView(
-                                title: "Электронная почта",
+                                title: "Mail",
                                 text: $viewModel.email
                             )
                             
+                            
                             Button {
-                                withAnimation {
-                                    viewModel.isEditing.toggle()
+                                viewModel.setProfile {
+                                    withAnimation {
+                                        viewModel.isEditing.toggle()
+                                    }
                                 }
-                                viewModel.setProfile()
                             } label: {
                                 HStack {
                                     Spacer()
@@ -111,6 +114,8 @@ struct ProfileView: View {
                                 }
                             }
                             .padding()
+                            .opacity(viewModel.isValidFields ? 1 : 0.5)
+                            
                         }
                         .padding(.horizontal)
                     } else {

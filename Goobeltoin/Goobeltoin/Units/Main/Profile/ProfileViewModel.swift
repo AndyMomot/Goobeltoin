@@ -13,26 +13,35 @@ extension ProfileView {
         @Published var isEditing = false
         @Published var showImagePicker = false
         
-        @Published var profileImage: UIImage = Asset.profilePlaceholder.image
+        @Published var profileImage: UIImage = Asset.profileIcon.image
         @Published var fullName = ""
         @Published var phone = ""
         @Published var email = ""
         @Published var profile: ProfileModel?
         @Published var itemTypes: [PassiveIncomeView.PassiveIncomeItem.ItemType] = []
         
+        var isValidFields: Bool {
+            !fullName.isEmpty && !phone.isEmpty && !email.isEmpty
+        }
+        
         func getProfile() {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                let profile = DefaultsService.profile
                 self.profile = DefaultsService.profile
                 self.fullName = profile?.fullName ?? ""
                 self.phone = profile?.phone ?? ""
                 self.email = profile?.email ?? ""
                 self.getProfileImage()
+                
+                if self.profile == nil {
+                    isEditing = true
+                }
             }
         }
         
-        func setProfile() {
+        func setProfile(completion: @escaping () -> Void) {
+            guard isValidFields else { return }
+            
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 guard var oldProfile = DefaultsService.profile else {
@@ -45,6 +54,7 @@ extension ProfileView {
                     self.setProfileImage(pathID: newProfile.id)
                     
                     self.getProfile()
+                    completion()
                     return
                 }
                 
@@ -55,6 +65,7 @@ extension ProfileView {
                 self.setProfileImage(pathID: oldProfile.id)
                 
                 self.getProfile()
+                completion()
             }
         }
         
@@ -71,12 +82,15 @@ extension ProfileView {
         }
         
         func getProfileImage() {
-            guard let pathID = profile?.id else { return }
+            guard let pathID = profile?.id else {
+                profileImage = Asset.profileIcon.image
+                return
+            }
             let path = FileManagerService.Keys.profileImage(id: pathID).path
             guard let data = FileManagerService().getFile(forPath: path),
                   let uiImage = UIImage(data: data)
             else {
-                profileImage = Asset.profilePlaceholder.image
+                profileImage = Asset.profileIcon.image
                 return
             }
             

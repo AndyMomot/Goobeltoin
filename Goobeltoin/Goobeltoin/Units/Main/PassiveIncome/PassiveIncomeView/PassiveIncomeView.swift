@@ -17,7 +17,6 @@ struct PassiveIncomeView: View {
                     .resizable()
                     .ignoresSafeArea()
                 
-                
                 VStack(spacing: 18) {
                     HStack {
                         Spacer()

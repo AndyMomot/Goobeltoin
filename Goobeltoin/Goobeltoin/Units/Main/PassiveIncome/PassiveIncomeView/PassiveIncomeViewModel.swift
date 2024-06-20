@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension PassiveIncomeView {
     final class PassiveIncomeViewModel: ObservableObject {
@@ -222,6 +223,21 @@ extension PassiveIncomeView {
         var title: String
         var income: Double
         var incomePeriod: IncomePeriod
+        
+        var incomePerMonth: Double {
+            switch incomePeriod {
+            case .week:
+                return income * 4
+            case .month:
+                return income
+            case .quarter:
+                return income / 3
+            case .sixMonths:
+                return income / 6
+            case .year:
+                return income / 12
+            }
+        }
     }
 }
 
@@ -265,6 +281,31 @@ extension PassiveIncomeView.PassiveIncomeItem {
         
         var image: String {
             rawValue
+        }
+        
+        var color: Color {
+            switch self {
+            case .bankDeposit:
+                return Color(red: 0.5, green: 0, blue: 0) // Dark Red
+            case .buyingBonds:
+                return Color(red: 0, green: 0.5, blue: 0) // Dark Green
+            case .cryptocurrency:
+                return Color(red: 0.5, green: 0.5, blue: 0) // Dark Yellow
+            case .business:
+                return  Color(red: 0.5, green: 0.25, blue: 0) // Dark Orange
+            case .vendingMachines:
+                return Color(red: 0.5, green: 0, blue: 0.25) // Dark Pink
+            case .rentingHousing:
+                return Color(red: 0.3, green: 0, blue: 0.3) // Dark Purple
+            case .rentingEquipmentTransport:
+                return Color(red: 0.3, green: 0.3, blue: 0.3) // Dark Gray
+            case .advertisingCars:
+                return Color(red: 0.25, green: 0, blue: 0.5) // Dark Indigo
+            case .infoProducts:
+                return Color(red: 0, green: 0.5, blue: 0.5) // Dark Teal
+            case .intellectualProperty:
+                return Color(red: 0, green: 0.5, blue: 0.25) // Dark Mint
+            }
         }
         
         var id: String {

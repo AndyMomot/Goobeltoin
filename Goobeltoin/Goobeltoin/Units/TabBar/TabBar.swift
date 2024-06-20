@@ -12,7 +12,7 @@ struct TabBar: View {
     
     var body: some View {
         TabView(selection: $viewModel.selection) {
-            Text("Analysis")
+            AnalysisView()
                 .tag(TabBarSelectionView.analysis.rawValue)
             
             PassiveIncomeView()
@@ -29,7 +29,6 @@ struct TabBar: View {
                     .frame(height: UIScreen.main.bounds.height * 0.1)
             }
             .edgesIgnoringSafeArea(.bottom)
-            
         }
     }
 }
