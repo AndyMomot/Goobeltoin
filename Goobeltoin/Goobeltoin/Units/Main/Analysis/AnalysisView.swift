@@ -50,6 +50,21 @@ struct AnalysisView: View {
                                 images: viewModel.images,
                                 backgroundColor: .white
                             )
+                            
+                            if !viewModel.values.isEmpty {
+                                PieChartRows(
+                                    colors: viewModel.colors,
+                                    images: viewModel.images,
+                                    titles: viewModel.titles,
+                                    names: viewModel.names,
+                                    values: viewModel.values.map {
+                                        $0.string()
+                                    },
+                                    percents: viewModel.values.map {
+                                        String(format: "%.0f%%", $0 * 100 / viewModel.values.reduce(0, +))
+                                    })
+                                .padding(.horizontal)
+                            }
                         }
                     }
                 }

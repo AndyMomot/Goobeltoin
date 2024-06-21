@@ -74,7 +74,6 @@ struct PieChartCustomView: View {
                 ForEach(arrange, id: \.self) { index in
                     PieCustomSlice(pieSliceData: self.slices[index])
                         .scaleEffect(self.activeIndex == index ? 1.03 : 1)
-                        .animation(Animation.spring())
                 }
                 .frame(width: widthFraction * bounds.width, height: widthFraction * bounds.width)
                 .gesture(
@@ -84,7 +83,9 @@ struct PieChartCustomView: View {
                             let diff = CGPoint(x: value.location.x - radius, y: radius - value.location.y)
                             let dist = pow(pow(diff.x, 2.0) + pow(diff.y, 2.0), 0.5)
                             if (dist > radius || dist < radius * innerRadiusFraction) {
-                                self.activeIndex = -1
+                                withAnimation {
+                                    self.activeIndex = -1
+                                }
                                 return
                             }
                             var radians = Double(atan2(diff.x, diff.y))
@@ -94,13 +95,17 @@ struct PieChartCustomView: View {
                             
                             for (i, slice) in slices.enumerated() {
                                 if (radians < slice.endAngle.radians) {
-                                    self.activeIndex = i
+                                    withAnimation {
+                                        self.activeIndex = i
+                                    }
                                     break
                                 }
                             }
                         }
                         .onEnded { value in
-                            self.activeIndex = -1
+                            withAnimation {
+                                self.activeIndex = -1
+                            }
                         }
                 )
                 Circle()
@@ -131,26 +136,15 @@ struct PieChartCustomView: View {
                 }
             }
             .frame(minHeight: bounds.width)
-            
-            if !values.isEmpty {
-                PieChartRows(
-                    images: self.images,
-                    titles: self.titles,
-                    names: self.names,
-                    values: self.values.map {
-                        $0.string()
-                    },
-                    percents: self.values.map {
-                        String(format: "%.0f%%", $0 * 100 / self.values.reduce(0, +))
-                    })
-            }
         }
+        .padding(.horizontal)
         .background(self.backgroundColor)
         .foregroundColor(Color.white)
     }
 }
 
 struct PieChartRows: View {
+    var colors: [Color]
     var images: [Image]
     var titles: [String]
     var names: [String]
@@ -159,17 +153,25 @@ struct PieChartRows: View {
     
     var body: some View {
         VStack {
-            ForEach(0..<self.values.count) { index in
+            let arrange = Array(0..<self.values.count)
+            ForEach(arrange, id: \.self) { index in
                 HStack {
+                    
                     images[index]
                         .resizable()
                         .scaledToFit()
                         .frame(width: 60, height: 60)
                     
                     VStack(alignment: .leading) {
-                        Text(self.titles[index])
-                            .foregroundStyle(Colors.blackCustom.swiftUIColor)
+                        HStack {
+                            Circle()
+                                .foregroundStyle(colors[index])
+                                .frame(width: 16)
+                            
+                            Text(self.titles[index])
+                                .foregroundStyle(Colors.blackCustom.swiftUIColor)
                             .font(Fonts.SFProDisplay.medium.swiftUIFont(size: 18))
+                        }
                         
                         Text(self.names[index])
                             .foregroundStyle(Colors.grayCustom.swiftUIColor)
@@ -191,7 +193,6 @@ struct PieChartRows: View {
     }
 }
 
-@available(OSX 10.15.0, *)
 struct PieChartView_Previews: PreviewProvider {
     static var previews: some View {
         PieChartCustomView(

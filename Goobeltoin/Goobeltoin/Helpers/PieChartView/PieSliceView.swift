@@ -59,7 +59,6 @@ struct PieCustomSlice: View {
     }
 }
 
-@available(OSX 10.15, *)
 struct PieSliceData {
     var startAngle: Angle
     var endAngle: Angle
