@@ -34,11 +34,13 @@ struct TopButtonsView: View {
                                     .stroke(.white, lineWidth: 3)
                             }
                     } else {
-                        Image(item.image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 41, height: 41)
-                            .clipShape(Circle())
+//                        Image(item.image)
+//                            .resizable()
+//                            .scaledToFit()
+//                            .frame(width: 41, height: 41)
+//                            .clipShape(Circle())
+                        
+                        EmptyView()
                     }
                 }
             }

@@ -18,7 +18,7 @@ struct TabBar: View {
             PassiveIncomeView()
                 .tag(TabBarSelectionView.passiveIncome.rawValue)
             
-            Text("Financial Condition")
+            FinancialConditionView()
                 .tag(TabBarSelectionView.financialCondition.rawValue)
         }
         .edgesIgnoringSafeArea(.bottom)
